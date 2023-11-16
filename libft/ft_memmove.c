@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbolmier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:12:41 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/15 15:35:14 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/11/16 19:16:12 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	ptr2 = (char *)src;
 	ptr = (char *)dest;
+	if (dest == NULL && src == NULL)
+		return (&ptr[0]);
 	if (src < dest)
 		while (n--)
 			ptr[n] = ptr2[n];

@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 19:31:46 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/16 19:00:47 by mbolmier         ###   ########.fr       */
+/*   Created: 2023/11/16 16:49:55 by mbolmier          #+#    #+#             */
+/*   Updated: 2023/11/16 18:51:23 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+#include "libft.h"
+
+int	count_words(char const *s, char c)
 {
-	int			i;
-	const char	*temp;
+	int	i;
+	int	words;
 
 	i = 0;
-	temp = 0;
+	words = 0;
 	while (s[i])
 	{
-		if (s[i] == (char)c)
-			temp = &s[i];
-		i++;
+		while (s[i] == c && s[i])
+			i++;
+		if (s[i])
+			words++;
+		while (s[i] != c && s[i])
+			i++;
 	}
-	if (s[i] == (char)c)
-		return ((char *)s + i);
-	return ((char *)temp);
+	return (words);
 }
 
-/*#include <stdio.h>
+/*char **ft_split(char const *s, char c)
+{
+
+}
+
 int	main(void)
 {
-	printf("%s", ft_strrchr("Je suis la", 's'));
+	printf("%d\n", count_words("      Salut     ca va     ", ' '));
 	return (0);
 }*/
