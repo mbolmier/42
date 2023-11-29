@@ -1,42 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 20:13:41 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/29 16:54:41 by mbolmier         ###   ########.fr       */
+/*   Created: 2023/11/29 17:23:15 by mbolmier          #+#    #+#             */
+/*   Updated: 2023/11/29 18:37:57 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+static unsigned int skip_start(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
+	size_t	finish;
 
 	i = 0;
-	if (little[0] == '\0')
-		return ((char *)big);
-	while (big[i] && i < len)
+	finish = 1;
+	while(s1[i] && finish)
 	{
 		j = 0;
-		while (little[j] == big[i + j] && i + j < len)
+		while (set[j])
 		{
+			if (s1[i] == set[j])
+			{
+				i++;
+				break;
+			}
 			j++;
-			if (little[j] == '\0')
-				return ((char *)&big[i]);
+			if (!set[j])
+				finish = 0;
 		}
 		i++;
 	}
-	return (0);
+	return ();
 }
 
-/*#include <stdio.h>
+/*char	*ft_strtrim(char const *s1, char const *set)
+{
+	char *str;
+}*/
+
 int	main(void)
 {
-	printf("%s", ft_strnstr("aaxx", "xx", 4));
+	char const *s1 = "   salut";
+	skip_start(s1, " ");
+	printf("%s\n", s1);
 	return (0);
-}*/
+}

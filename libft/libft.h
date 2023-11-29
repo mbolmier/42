@@ -6,7 +6,7 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:31:17 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/15 20:04:08 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/11/29 16:09:54 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-//char	*ft_itoa(int n);
+char	*ft_itoa(int n);
 //char	**ft_split(const char *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
