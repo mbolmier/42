@@ -6,3 +6,6 @@ ft_putstr_fd && ft_putendl_fd
   Tu utilises une boucle while pour écrire les caractères un à un dans ton write() -> write (fd, &s[i++], 1);
   La fonction write prends autant de temps à écrire un caractère que cent
   Tu peux donc utiliser ft_strlen() sur ta chaîne pour déterminer sa taille et l'écrire en une fois sans passer par une boucle while -> write (fd, s, ft_strlen(s));
+ft_calloc
+  Ton calloc ne passera pas à la moulinette, le problème est similaire à ce que j'avais qui n'est pas passé et m'a fait fail mon push
+  Il est simple à corriger mais ça sera plus clair si je te l'explique directement en appel sur discord
