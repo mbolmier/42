@@ -9,3 +9,5 @@ ft_putstr_fd && ft_putendl_fd
 ft_calloc
   Ton calloc ne passera pas à la moulinette, le problème est similaire à ce que j'avais qui n'est pas passé et m'a fait fail mon push
   Il est simple à corriger mais ça sera plus clair si je te l'explique directement en appel sur discord
+ft_atoi
+  Je viens de comprendre une dinguerie en regardant ton atoi, j'ai fait la même chose et je t'en parlerais en voc, il fonctionne mais il a un comportement absurde
