@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 18:03:42 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/12/02 19:24:38 by mbolmier         ###   ########.fr       */
+/*   Created: 2023/12/04 20:07:31 by mbolmier          #+#    #+#             */
+/*   Updated: 2023/12/04 20:15:55 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
-{
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
-}
+#include "libft.h"
 
-/*#include <stdio.h>
-int	main(void)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	printf("%c", ft_toupper('#'));
-	return (0);
-}*/
+	size_t	i;
+
+	i = 0;
+	if (f == NULL)
+		return ;
+	while (s[i])
+	{
+		(*f)(i, &s[i]);
+		i++;
+	}
+}
