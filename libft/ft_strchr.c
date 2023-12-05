@@ -6,7 +6,7 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:27:40 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/16 18:57:29 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:29:00 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s + i);
 	return (0);
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	printf("%s", ft_strchr("Hello", 'l'));
-	return (0);
-}*/

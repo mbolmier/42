@@ -6,7 +6,7 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:45:53 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/15 19:31:52 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:55:32 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,3 @@ int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 	}
 	return (0);
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	printf("%d", ft_strncmp("abc", "abc", 7));
-	return (0);
-}*/

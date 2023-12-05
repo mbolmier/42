@@ -6,11 +6,11 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:12:55 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/15 19:55:29 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:22:36 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -18,9 +18,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	len;
 	size_t	i;
 
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
 	len = nmemb * size;
-	if (len > 2147483647)
-		return (0);
+	if (len / size != nmemb)
+		return (NULL);
 	arr = malloc (size * nmemb);
 	if (arr == NULL)
 		return (NULL);
@@ -32,10 +34,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return (arr);
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	printf("%s", (char *)ft_calloc(10, 1));
-	return (0);
-}*/

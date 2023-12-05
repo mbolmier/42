@@ -6,7 +6,7 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:58:48 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/29 17:07:05 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:30:57 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (len_dst + len_src);
 }
-
-/*#include <stdio.h>
-int main (void)
-{
-	char dst[] = "Salut";
-	char src[] = " toi";
-	printf("%zu", ft_strlcat(dst, src, 0));
-	return (0);
-}*/

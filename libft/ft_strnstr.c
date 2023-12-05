@@ -6,7 +6,7 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:13:41 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/29 16:54:41 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:33:09 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	printf("%s", ft_strnstr("aaxx", "xx", 4));
-	return (0);
-}*/

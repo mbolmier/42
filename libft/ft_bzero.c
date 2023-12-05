@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbolmier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:58:49 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/15 13:36:48 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:23:08 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -20,15 +20,3 @@ void	ft_bzero(void *s, size_t n)
 	while (n--)
 		ptr[n] = '\0';
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	char str[] = "Salut";
-	char *ptr;
-
-	ptr = str;
-	ft_bzero(ptr, 4);
-	printf("%s\n", str);
-	return (0);
-}*/

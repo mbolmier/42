@@ -6,7 +6,7 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:03:42 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/12/02 19:24:38 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:51:09 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,3 @@ int	ft_toupper(int c)
 		c -= 32;
 	return (c);
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	printf("%c", ft_toupper('#'));
-	return (0);
-}*/

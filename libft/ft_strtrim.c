@@ -6,13 +6,13 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:23:15 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/12/02 19:40:51 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:55:31 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int skip_start(char const *s1, char const *set)
+static unsigned int	skip_start(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	finish;
@@ -28,7 +28,7 @@ static unsigned int skip_start(char const *s1, char const *set)
 			if (*s1 == set[i])
 			{
 				num++;
-				break;
+				break ;
 			}
 			i++;
 			if (!set[i])
@@ -90,10 +90,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	*str = '\0';
 	return (str - len);
 }
-
-/*int	main(void)
-{
-	char const *s1 = ",,,   ,,, Holaaaa,, ,   ";
-	printf("%s\n", ft_strtrim(s1, " ,"));
-	return (0);
-}*/

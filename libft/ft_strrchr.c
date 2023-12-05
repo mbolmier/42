@@ -6,7 +6,7 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:31:46 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/16 19:00:47 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:33:22 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)s + i);
 	return ((char *)temp);
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	printf("%s", ft_strrchr("Je suis la", 's'));
-	return (0);
-}*/

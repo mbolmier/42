@@ -6,7 +6,7 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:12:56 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/29 16:49:24 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:24:52 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_itoa(int n)
 {
 	char		*number;
 	size_t		len;
-	int long	nb;
+	long int	nb;
 
 	nb = n;
 	len = number_len(nb);

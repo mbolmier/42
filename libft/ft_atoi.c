@@ -6,7 +6,7 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:15:38 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/16 16:26:51 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:54:50 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
-
-/*#include <stdio.h>
-int main(void)
-{
-	char *nptr = "		\t-48";
-	printf("%d", ft_atoi(nptr));
-	return (0);
-}*/

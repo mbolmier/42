@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbolmier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:35:30 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/07 17:39:13 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:55:00 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,3 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
-
-/*#include <stdio.h>
-int	main (void)
-{
-	printf("%d", ft_isprint(122));
-	return (0);
-}*/

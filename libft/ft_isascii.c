@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbolmier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:30:01 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/07 17:35:07 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:24:07 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,3 @@ int	ft_isascii(int c)
 		return (1);
 	return (0);
 }
-
-/*#include <stdio.h>
-int	main (void)
-{
-	printf("%d", ft_isascii(12));
-	return (0);
-}*/

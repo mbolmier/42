@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbolmier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:37:53 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/11/15 15:34:30 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:54:57 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -26,11 +26,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	char *str = "salsa";
-	printf("%s", (char *)ft_memchr(str, 'a', 12));
-	return (0);
-}*/
