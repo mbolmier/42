@@ -6,7 +6,7 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:24:09 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/12/23 11:49:10 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/23 12:08:03 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,9 +120,14 @@ int	ft_percent(int i, int j, const char *format, va_list args)
 	if (format[j] == 'u')
 		i = ft_putunbr(va_arg(args, unsigned int), i);
 	if (format[j] == 'x')
-		i = ft_puthexa_l(va_arg(args, unsigned long), i);
+		i = ft_puthexa_l(va_arg(args, unsigned int), i);
 	if (format[j] == 'X')
-		i = ft_puthexa_u(va_arg(args, unsigned long), i);
+		i = ft_puthexa_u(va_arg(args, unsigned int), i);
+	if (format[j] == '%')
+	{
+		write(1, "%", 1);
+		i += 1;
+	}
 	return (i);
 }
 
@@ -154,10 +159,10 @@ int	main(void)
 {
 	int i;
 
-	i = ft_printf("me    ->  hello 42!\n%x", -1);
+	i = ft_printf("me    ->  hello 42!\n%%");
 	printf("\n");
 	printf("i: %i\n\n", i);
-	i = printf("real    ->  hello 42!\n%x", -1);
+	i = printf("real    ->  hello 42!\n%%");
 	printf("\n");
 	printf("i: %i\n\n", i);
 
