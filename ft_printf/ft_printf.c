@@ -6,7 +6,7 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:24:09 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/12/23 11:32:44 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/23 11:36:57 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int	ft_puthexa_l(size_t x, int i)
 	}
 	return (i);
 }
+
 int	ft_puthexa_u(size_t x, int i)
 {
 	if (x == 0)
@@ -148,6 +149,7 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (i);
 }
+
 int	main(void)
 {
 	int i;
