@@ -1,13 +1,1 @@
-ft_memmove
-  Dans ta valeur de retour, tu renvoie l'adresse de la première case de ton tableau -> return (&ptr[0]);
-  Mais l'avantage de travailler avec des tableaux plutôt que des pointeur est que le pointeur reste sur la première case, tu peux donc directement renvoyer ptr -> return (ptr);
 
-ft_putstr_fd && ft_putendl_fd
-  Tu utilises une boucle while pour écrire les caractères un à un dans ton write() -> write (fd, &s[i++], 1);
-  La fonction write prends autant de temps à écrire un caractère que cent
-  Tu peux donc utiliser ft_strlen() sur ta chaîne pour déterminer sa taille et l'écrire en une fois sans passer par une boucle while -> write (fd, s, ft_strlen(s));
-ft_calloc
-  Ton calloc ne passera pas à la moulinette, le problème est similaire à ce que j'avais qui n'est pas passé et m'a fait fail mon push
-  Il est simple à corriger mais ça sera plus clair si je te l'explique directement en appel sur discord
-ft_atoi
-  Je viens de comprendre une dinguerie en regardant ton atoi, j'ai fait la même chose et je t'en parlerais en voc, il fonctionne mais il a un comportement absurde
