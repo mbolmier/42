@@ -6,7 +6,7 @@
 /*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:24:09 by mbolmier          #+#    #+#             */
-/*   Updated: 2023/12/23 11:36:57 by mbolmier         ###   ########.fr       */
+/*   Updated: 2023/12/23 11:49:10 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	ft_putunbr(unsigned int u, int i)
 	return (i);
 }
 
-int	ft_puthexa_l(size_t x, int i)
+int	ft_puthexa_l(unsigned int x, int i)
 {
 	if (x == 0)
 		i = ft_putchar('0', i);
@@ -90,7 +90,7 @@ int	ft_puthexa_l(size_t x, int i)
 	return (i);
 }
 
-int	ft_puthexa_u(size_t x, int i)
+int	ft_puthexa_u(unsigned int x, int i)
 {
 	if (x == 0)
 		i = ft_putchar('0', i);
@@ -118,11 +118,11 @@ int	ft_percent(int i, int j, const char *format, va_list args)
 	if (format[j] == 'd' || format[j] == 'i')
 		i = ft_putnbr(va_arg(args, int), i);
 	if (format[j] == 'u')
-		i = ft_putunbr(va_arg(args, int), i);
+		i = ft_putunbr(va_arg(args, unsigned int), i);
 	if (format[j] == 'x')
-		i = ft_puthexa_l(va_arg(args, size_t), i);
+		i = ft_puthexa_l(va_arg(args, unsigned long), i);
 	if (format[j] == 'X')
-		i = ft_puthexa_u(va_arg(args, size_t), i);
+		i = ft_puthexa_u(va_arg(args, unsigned long), i);
 	return (i);
 }
 
@@ -154,10 +154,10 @@ int	main(void)
 {
 	int i;
 
-	i = ft_printf("me    ->  hello 42!\n%i", 42);
+	i = ft_printf("me    ->  hello 42!\n%x", -1);
 	printf("\n");
 	printf("i: %i\n\n", i);
-	i = printf("real    ->  hello 42!\n%i", 42);
+	i = printf("real    ->  hello 42!\n%x", -1);
 	printf("\n");
 	printf("i: %i\n\n", i);
 
