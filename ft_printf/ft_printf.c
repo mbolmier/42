@@ -6,64 +6,61 @@
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:24:09 by mbolmier          #+#    #+#             */
-/*   Updated: 2024/03/01 12:09:43 by vdomasch         ###   ########.fr       */
+/*   Updated: 2024/03/01 14:36:36 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>  // for real printf
+#include <stddef.h>
 
-static int	ft_percent(int i, int j, const char *format, va_list args)
+static int	ft_percent(int j, const char *format, va_list args, int *error)
 {
 	if (format[j] == 'c')
-		i = ft_putchar(va_arg(args, int), i);
+		return (ft_putchar(va_arg(args, int), error));
 	if (format[j] == 's')
-		i = ft_putstr(va_arg(args, char *), i);
+		return (ft_putstr(va_arg(args, char *), error));
 	if (format[j] == 'd' || format[j] == 'i')
-		i = ft_putnbr(va_arg(args, int), i);
+		return (ft_putnbr(va_arg(args, int), error));
 	if (format[j] == 'u')
-		i = ft_putunbr(va_arg(args, unsigned long int), i);
+		return (ft_putunbr(va_arg(args, unsigned long int), error));
 	if (format[j] == 'x')
-		i = ft_puthexa_l(va_arg(args, unsigned int), i);
+		return (ft_puthexa_l(va_arg(args, unsigned int), error));
 	if (format[j] == 'X')
-		i = ft_puthexa_u(va_arg(args, unsigned int), i);
+		return (ft_puthexa_u(va_arg(args, unsigned int), error));
 	if (format[j] == 'p')
-		i = ft_put_ptr(va_arg(args, unsigned long), i);
+		return (ft_put_ptr(va_arg(args, unsigned long), error));
 	if (format[j] == '%')
-	{
-		write(1, "%", 1);
-		i += 1;
-	}
-	return (i);
+		return (ft_putchar('%', error));
+	else if (format[j] == '\0')
+		*error = -1;
+	return (0);
 }
 
 int	ft_printf(const char *format, ...)
 {
-	va_list args;
-	int	i;
-	int	j;
+	va_list	args;
+	int		count;
+	int		error;
+	int		j;
 
-	i = 0;
+	count = 0;
+	error = 0;
 	j = 0;
 	va_start(args, format);
-	while (format[j])
+	while (format[j] && !error)
 	{
 		if (format[j] == '%')
-			i = ft_percent(i, ++j, format, args);
+			count += ft_percent(++j, format, args, &error);
 		else
 		{
-			i++;
-			write(1, &format[j], 1);
+			count++;
+			ft_putchar(format[j], &error);
 		}
 		j++;
 	}
 	va_end(args);
-	return (i);
+	if (error)
+		return (-1);
+	return (count);
 }
-/*
-int    main(void)
-{
-    ft_printf("%d\n", ft_printf("%p\n", -4294967295));
-    //printf("%d\n", printf("%ld\n", 4294967295));
-    return (0);
-}*/

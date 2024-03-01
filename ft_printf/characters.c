@@ -3,31 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   characters.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 19:53:10 by mbolmier          #+#    #+#             */
-/*   Updated: 2024/02/29 20:25:19 by mbolmier         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:41:42 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(int c, int i)
+int	ft_putchar(int c, int *error)
 {
-	write(1, &c, 1);
-	return (i + 1);
+	if (write(1, &c, 1) == -1)
+		*error = 1;
+	return (1);
 }
 
-int	ft_putstr(char *str, int i)
+int	ft_putstr(char *str, int *error)
 {
+	int	i;
+
+	i = 0;
 	if (!str)
-		i = ft_putstr("(null)", i);
+		return (ft_putstr("(null)", error));
 	else
 	{
-		while (*str)
+		while (str[i] && !(*error))
 		{
-			write(1, &(*str), 1);
-			str++;
+			ft_putchar(str[i], error);
 			i++;
 		}
 	}
