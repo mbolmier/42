@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   numbers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 19:49:28 by mbolmier          #+#    #+#             */
-/*   Updated: 2024/02/29 19:57:57 by mbolmier         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:09:24 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stddef.h>
 
 int	ft_putnbr(int d, int i)
 {
@@ -24,7 +25,7 @@ int	ft_putnbr(int d, int i)
 		i = ft_putchar('-', i);
 		i = ft_putnbr(-d, i);
 	}
-	else if (d > 0 && d < 10)
+	else if (d < 10)
 		i = ft_putchar(d + 48, i);
 	else
 	{
@@ -36,7 +37,7 @@ int	ft_putnbr(int d, int i)
 
 int	ft_putunbr(unsigned int u, int i)
 {
-	if (u > 0 && u < 10)
+	if (u < 10)
 		i = ft_putchar(u + 48, i);
 	else
 	{
@@ -84,18 +85,17 @@ int	ft_puthexa_u(unsigned int x, int i)
 	return (i);
 }
 
-int	ft_put_ptr(unsigned int x, int i)
+int	ft_put_ptr(unsigned long x, int i)
 {
-	if (x == 0)
-		return	(ft_putstr("(nil)", i));
-	i = ft_putstr("0x", i);
-	if (x >= 16)
+	if (!x)
+		i = ft_putstr("(nil)", i);
+	else 
 	{
-		i = ft_puthexa_l(x / 16, i);
-		i = ft_puthexa_l(x % 16, i);
-	}
-	else
-	{
+		if (x < 16)
+			i = ft_putstr("0x", i);
+		if (x > 15)
+			i = ft_put_ptr(x / 16, i);
+		x = x % 16;
 		if (x <= 9)
 			i = ft_putchar(x + 48, i);
 		else
