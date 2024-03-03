@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: mbolmier <mbolmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 21:40:52 by mbolmier          #+#    #+#             */
-/*   Updated: 2024/03/03 13:30:35 by vdomasch         ###   ########.fr       */
+/*   Updated: 2024/03/03 13:40:58 by mbolmier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
