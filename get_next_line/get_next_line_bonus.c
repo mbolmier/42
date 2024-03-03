@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdomasch <vdomasch@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 20:47:32 by mbolmier          #+#    #+#             */
-/*   Updated: 2024/03/03 13:24:27 by vdomasch         ###   ########.fr       */
+/*   Updated: 2024/03/03 13:33:40 by vdomasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static int	find_end_line(const char *str)
 {
@@ -99,25 +99,25 @@ char	*get_next_line(int fd)
 {
 	char		*line;
 	char		*stack;
-	static char	buffer[BUFFER_SIZE + 1];
+	static char	buffer[1005][BUFFER_SIZE + 1];
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, buffer, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, buffer[fd], 0) < 0 || fd > 1004)
 		return (NULL);
-	if (buffer[0] == '\n')
+	if (buffer[fd][0] == '\n')
 	{
-		extract_memory(buffer);
+		extract_memory(buffer[fd]);
 		return (line_feed());
 	}
-	stack = ft_strdup(buffer);
+	stack = ft_strdup(buffer[fd]);
 	if (stack)
-		stack = read_line(fd, buffer, stack);
+		stack = read_line(fd, buffer[fd], stack);
 	if (!stack)
 	{
-		extract_memory(buffer);
+		extract_memory(buffer[fd]);
 		return (NULL);
 	}
 	line = extract_line(stack);
-	extract_memory(buffer);
+	extract_memory(buffer[fd]);
 	free(stack);
 	return (line);
 }
