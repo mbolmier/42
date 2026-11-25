@@ -14,22 +14,22 @@
 #include <stdio.h>  // for real printf
 #include <stddef.h>
 
-static int	ft_percent(int j, const char *format, va_list args, int *error)
+static int	ft_percent(int j, const char *format, va_list *args, int *error)
 {
 	if (format[j] == 'c')
-		return (ft_putchar(va_arg(args, int), error));
+		return (ft_putchar(va_arg(*args, int), error));
 	if (format[j] == 's')
-		return (ft_putstr(va_arg(args, char *), error));
+		return (ft_putstr(va_arg(*args, char *), error));
 	if (format[j] == 'd' || format[j] == 'i')
-		return (ft_putnbr(va_arg(args, int), error));
+		return (ft_putnbr(va_arg(*args, int), error));
 	if (format[j] == 'u')
-		return (ft_putunbr(va_arg(args, unsigned long int), error));
+		return (ft_putunbr(va_arg(*args, unsigned int), error));
 	if (format[j] == 'x')
-		return (ft_puthexa_l(va_arg(args, unsigned int), error));
+		return (ft_puthexa_l(va_arg(*args, unsigned int), error));
 	if (format[j] == 'X')
-		return (ft_puthexa_u(va_arg(args, unsigned int), error));
+		return (ft_puthexa_u(va_arg(*args, unsigned int), error));
 	if (format[j] == 'p')
-		return (ft_put_ptr(va_arg(args, unsigned long), error));
+		return (ft_put_ptr(va_arg(*args, unsigned long), error));
 	if (format[j] == '%')
 		return (ft_putchar('%', error));
 	else if (format[j] == '\0')
@@ -51,7 +51,7 @@ int	ft_printf(const char *format, ...)
 	while (format[j] && !error)
 	{
 		if (format[j] == '%')
-			count += ft_percent(++j, format, args, &error);
+			count += ft_percent(++j, format, &args, &error);
 		else
 		{
 			count++;
