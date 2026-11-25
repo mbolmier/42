@@ -44,4 +44,4 @@ Thanks to Vincent Domaschio ([vdomasch](https://github.com/vdomasch)), who contr
 
 ---
 
-Martin Bolmier, now a Data Science student (BUT Science des données, Lyon) · [LinkedIn](https://www.linkedin.com/in/martin-bolmier-501b92301/)
+Martin Bolmier, now a Data Science student (BUT Science des données, Lyon) · [LinkedIn](https://www.linkedin.com/in/mbolmier/)
